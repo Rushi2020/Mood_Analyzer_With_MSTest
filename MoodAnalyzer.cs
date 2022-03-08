@@ -7,15 +7,37 @@ using System.Threading.Tasks;
 namespace Mood_Analyzer_With_MSTest
 {
     public class MoodAnalyzer {
-         
-        // string message = "SAD";
-            public string AnalyzeMood(string mood)
+
+        string mood;
+        public MoodAnalyzer()
+        {
+            this.mood = mood;
+        }
+
+        public string AnalyzeMood(string mood)
+        {
+            try
             {
-                if (mood.ToLower().Contains("sad"))
-                    return "sad";
+                if (this.mood.ToUpper().Contains("HAPPY"))
+                {
+                    return "HAPPY";
+                }
+                else if (this.mood.ToUpper().Contains("SAD"))
+                {
+                    return "SAD";
+                }
                 else
-                    return "happy";
+                {
+                    return "HAPPY";
+                }
             }
-        
+            catch (NullReferenceException)
+            {
+                return "HAPPY";
+            }
+        }
+
+
+
     }
 }
