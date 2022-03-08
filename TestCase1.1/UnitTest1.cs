@@ -30,5 +30,16 @@ namespace TestCase1._1
             Assert.AreEqual("happy", result);
 
         }
+        public void Given_Null_Mood_Return_Happy()
+        {
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
+            string mood = "Null";
+            //string expected = "happy";
+            // string actual = moodAnalyzer.AnalyzeMood(mood);
+            // Assert.AreEqual(expected, actual);
+            string result = moodAnalyzer.AnalyzeMood(mood);
+            Assert.AreEqual("happy", result);
+
+        }
     }
 }
