@@ -9,12 +9,14 @@ namespace Mood_Analyzer_With_MSTest
     public class MoodAnalyzer {
 
         string mood;
-        public MoodAnalyzer()
+        public MoodAnalyzer(){}
+
+        public MoodAnalyzer(string mood)
         {
             this.mood = mood;
         }
 
-        public string AnalyzeMood(string mood)
+        public string AnalyzeMood()
         {
             try
             {

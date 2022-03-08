@@ -9,36 +9,37 @@ namespace TestCase1._1
         [TestMethod]
         public void Given_SAD_Return_Sad()
         {
-            MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-            string mood = "I am in sad mood";
-            string expected = "sad";
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer("i am in sad mood");
+            //string mood = "I am in sad mood";
+            //string expected = "sad";
             // string actual = moodAnalyzer.AnalyzeMood(mood);
             // Assert.AreEqual(expected, actual);
-            string result = moodAnalyzer.AnalyzeMood(mood);
-            Assert.AreEqual(expected, result);
+            string result = moodAnalyzer.AnalyzeMood();
+            Assert.AreEqual("SAD", result);
 
         }
         [TestMethod]
         public void Given_Happy_nor_Sad_Return_Happy()
         {
-            MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-            string mood = "I am in any mood";
+            MoodAnalyzer moodAnalyzer = new MoodAnalyzer("i am in happy mood");
+            //string mood = "I am in any mood";
             //string expected = "happy";
             // string actual = moodAnalyzer.AnalyzeMood(mood);
             // Assert.AreEqual(expected, actual);
-            string result = moodAnalyzer.AnalyzeMood(mood);
-            Assert.AreEqual("happy", result);
+            string result = moodAnalyzer.AnalyzeMood();
+            Assert.AreEqual("HAPPY", result);
 
         }
-        public void Given_Null_Mood_Return_Happy()
+        [TestMethod]
+        public void Giving_NULL_Message_Return_Happy()
         {
             MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
             string mood = "Null";
             //string expected = "happy";
             // string actual = moodAnalyzer.AnalyzeMood(mood);
             // Assert.AreEqual(expected, actual);
-            string result = moodAnalyzer.AnalyzeMood(mood);
-            Assert.AreEqual("happy", result);
+            string result = moodAnalyzer.AnalyzeMood();
+            Assert.AreEqual("HAPPY", result);
 
         }
     }
