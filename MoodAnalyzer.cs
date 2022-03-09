@@ -28,6 +28,10 @@ namespace Mood_Analyzer_With_MSTest
                 {
                     return "SAD";
                 }
+                else if (this.mood.ToUpper().Equals(string.Empty))
+                {
+                    throw new MoodAnalyzerCustomExceptions(MoodAnalyzerCustomExceptions.ExceptionType.EMPTY_MESSAGE, "message should not be empty");
+                }
                 else
                 {
                     return "HAPPY";
@@ -35,7 +39,7 @@ namespace Mood_Analyzer_With_MSTest
             }
             catch (NullReferenceException)
             {
-                return "HAPPY";
+                throw new MoodAnalyzerCustomExceptions(MoodAnalyzerCustomExceptions.ExceptionType.NULL_MESSAGE, "message should not be Null");
             }
         }
 
